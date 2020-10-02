@@ -74,6 +74,7 @@ label span{
 }
 .iteml{
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .form-column{
@@ -116,4 +117,10 @@ label span{
     background: none;
     font-weight: 700;
     padding-top: 0;
+}
+
+.form-row{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
 }

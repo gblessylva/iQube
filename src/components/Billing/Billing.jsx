@@ -42,7 +42,6 @@ class Billing extends Component {
                             />
                         </div>
                         <div className="form-item">
-                            <div className="form-row">
                                 <label htmlFor="card-type">
                                     Card Type <span>*</span>
                                 </label>
@@ -54,11 +53,12 @@ class Billing extends Component {
                                     <option value="Visa">Visa</option>
                                     <option value="verve">Verve</option>
                                 </select>
-                            </div>
+                        </div>
+                        <div className="form-item iteml">
                             <div className="form-row">
-                            <label htmlFor="card-type">
-                                    Expiry Date <span>*</span>
-                                </label>
+                            <label htmlFor="expiry-day">
+                                Expiry Date <span>*</span>
+                            </label>
                                 <input 
                                     type="text"
                                     maxLength= {2}
@@ -68,6 +68,11 @@ class Billing extends Component {
                                     required
                                     defaultValue= {values.expiry.day}
                                 />
+                            </div>
+                            <div className="form-row"> 
+                                <label htmlFor="expiry-month">
+                                    Expiry Date <span>*</span>
+                                </label>
                                 <input 
                                     type="text"
                                     maxLength= {2}
@@ -77,6 +82,11 @@ class Billing extends Component {
                                     required
                                     defaultValue= {values.expiry.month}
                                 />
+                                </div>
+                                <div className="form-row">
+                                    <label htmlFor="cvv">
+                                        CVV <span>*</span>
+                                    </label>
                                 <input 
                                     type="text"
                                     maxLength= {3}
@@ -89,12 +99,12 @@ class Billing extends Component {
                             </div>
                             
                         </div>
-                        <div className="form-item">
+                        <div className="form-item-button">
                             <button 
                                 className='continue-btn'
                                 onClick={this.continue}
                             >Continue</button>
-                            <button>Cancel Payment</button>
+                            <button className="cancel-btn">Cancel Payment</button>
                         </div>
                     </div>
                     

@@ -1,89 +1,52 @@
 import React, {Component} from 'react'
 
 class Confirm extends Component {
-  continue = e => {
-      e.preventDefault();
-      this.props.nextStep()
-    }
-
+    continue = e => {
+        e.preventDefault();
+        this.props.nextStep()
+      }  
+    
     render(){
-        const { values, handleChange, stepTwo } = this.props;
+        const { handleChange } = this.props;
         return( 
-        <div className="form-container">
+        <div className="confirm-container">
                 <React.Fragment> 
                     <div className="header">
                         <h1>Complete Your Purchase</h1>
                     </div>
-                    <div className="form-wrapper">
-                        <div className="form-item">
-                            <label htmlFor="name-on-card">
-                                Name on Card <span>*</span>
-                            </label>
-                            <input 
-                            id="name-on-card"
-                            type="text" 
-                            placeholder='Opara Linus Ahmed'
-                            onChange={ handleChange('nameOnCard')}
-                            />
-                        </div>
-                        <div className="form-item">
-                            <div className="form-row">
-                                <label htmlFor="card-type">
-                                    Card Type <span>*</span>
-                                </label>
-                                <input 
-                                    type="text"
-                                    maxLength= {10}
-                                    id="card-type" 
-                                    placeholder='0909 2090 3562 3452'
-                                    onChange={ handleChange('cardType')}
-                                    required
-                                    defaultValue= {values.cardType}
-                                />
+                    <div className="confirm-card">
+                        <div className="confirm-header">
+                            <div className="col-1">
+                                Item
                             </div>
-                            <div className="form-row">
-                            <label htmlFor="card-type">
-                                    Expiry Date <span>*</span>
-                                </label>
-                                <input 
-                                    type="text"
-                                    maxLength= {2}
-                                    id="expiry-day" 
-                                    placeholder='27'
-                                    onChange={ handleChange('cardType')}
-                                    required
-                                    defaultValue= {values.cardType}
-                                />
-                                <input 
-                                    type="text"
-                                    maxLength= {2}
-                                    id="expiry-month" 
-                                    placeholder='02'
-                                    onChange={ handleChange('cardType')}
-                                    required
-                                    defaultValue= {values.cardType}
-                                />
-                                <input 
-                                    type="text"
-                                    maxLength= {3}
-                                    id="cvv" 
-                                    placeholder='345'
-                                    onChange={ handleChange('cvv')}
-                                    required
-                                    defaultValue= {values.cvv}
-                                />
+                            <div className="col-2">
+                                N Price
                             </div>
-                            
                         </div>
-                        <div className="form-item">
+                        <div className="confirm-purchase-details">
+                        <div className="col-1">
+                                <p>Datascience and Usability</p>
+                            </div>
+                            <div className="col-2">
+                               <p>50, 000</p>
+                            </div>
+                            <div className="col-1">
+                                <p>Shipping</p>
+                            </div>
+                            <div className="col-2">
+                               <p>0.00</p>
+                            </div>
+                        
+                        </div>
+                    </div>
+                    
+                    <div className="form-item">
                             <button 
                                 className='continue-btn'
                                 onClick={this.continue}
                             
-                            >Continue</button>
-                            <button>Cancel Payment</button>
+                            >Pay</button>
                         </div>
-                    </div>
                     
                 </React.Fragment>
             </div>) }

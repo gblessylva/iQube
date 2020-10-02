@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
+
 import PersonalInfo from './Info/PersonalInfo';
 import Billing from './Billing/Billing';
 import Confirm from './Confirm/Confirm'
+import Success from "./Success/Success"
 
 class PurchaseForm extends Component {
     state = {
@@ -16,12 +18,10 @@ class PurchaseForm extends Component {
         cardType:'',
         cardDetails: '',
         isButtonDisabled: true,
-        stepTwo: {
-            cvv: '',
-            cardName : ''
-        },
-        confirm : {
-            
+        cvv: '',
+        expiry : {
+            day: '',
+            month: ''
         }
 
 
@@ -47,8 +47,8 @@ class PurchaseForm extends Component {
 
     render() {
         const {step} = this.state;
-        const {fullName, email, Address1, Address2, LGA, stateOfOrigin, nameOnCard, cardType,  cardDetails, stepTwo } = this.state
-        const values = {fullName, email, Address1, Address2, LGA, stateOfOrigin,  nameOnCard, cardType,  cardDetails, stepTwo } 
+        const {fullName, email, Address1, Address2, LGA, stateOfOrigin, nameOnCard, cardType,  cardDetails, cvv, expiry } = this.state
+        const values = {fullName, email, Address1, Address2, LGA, stateOfOrigin,  nameOnCard, cardType,  cardDetails, cvv, expiry } 
     
 
 
@@ -68,7 +68,7 @@ class PurchaseForm extends Component {
                     <Billing
                     nextStep ={this.nextStep}
                     handleChange = {this.handleChange}
-                    values ={stepTwo}
+                    values ={values}
                     />                   
                     
                 );
@@ -78,18 +78,17 @@ class PurchaseForm extends Component {
                     <Confirm
                     nextStep ={this.nextStep}
                     handleChange = {this.handleChange}
-                    values ={stepTwo}
+                    values ={values}
                     />                   
                     
                 );
-                    
-            default:
+                case 4:
                 return (
-                    <React.Fragment> 
-                        <h1>Hello 3</h1>
-                    </React.Fragment>
+                    <Success/>                   
                     
                 );
+                   
+            
         }
         
     }

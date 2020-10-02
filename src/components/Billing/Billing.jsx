@@ -7,7 +7,7 @@ class Billing extends Component {
     }
 
     render(){
-        const { values, handleChange, stepTwo } = this.props;
+        const { values, handleChange} = this.props;
         return( 
         <div className="form-container">
                 <React.Fragment> 
@@ -31,15 +31,14 @@ class Billing extends Component {
                                 <label htmlFor="card-type">
                                     Card Type <span>*</span>
                                 </label>
-                                <input 
-                                    type="text"
-                                    maxLength= {10}
-                                    id="card-type" 
-                                    placeholder='0909 2090 3562 3452'
+                                <select 
                                     onChange={ handleChange('cardType')}
-                                    required
                                     defaultValue= {values.cardType}
-                                />
+                                >
+                                    <option value="master" >Master Card</option>
+                                    <option value="Visa">Visa</option>
+                                    <option value="verve">Verve</option>
+                                </select>
                             </div>
                             <div className="form-row">
                             <label htmlFor="card-type">
@@ -50,18 +49,18 @@ class Billing extends Component {
                                     maxLength= {2}
                                     id="expiry-day" 
                                     placeholder='27'
-                                    onChange={ handleChange('cardType')}
+                                    onChange={ handleChange('expiry')}
                                     required
-                                    defaultValue= {values.cardType}
+                                    defaultValue= {values.expiry.day}
                                 />
                                 <input 
                                     type="text"
                                     maxLength= {2}
                                     id="expiry-month" 
                                     placeholder='02'
-                                    onChange={ handleChange('cardType')}
+                                    onChange={ handleChange('expiry')}
                                     required
-                                    defaultValue= {values.cardType}
+                                    defaultValue= {values.expiry.month}
                                 />
                                 <input 
                                     type="text"

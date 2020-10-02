@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PersonalInfo from './Info/PersonalInfo';
 import Billing from './Billing/Billing';
+import Confirm from './Confirm/Confirm'
 
 class PurchaseForm extends Component {
     state = {
@@ -11,10 +12,19 @@ class PurchaseForm extends Component {
         Address1:'',
         Address2:'',
         stateOfOrigin:'',
+        nameOnCard :'',
+        cardType:'',
+        cardDetails: '',
+        isButtonDisabled: true,
         stepTwo: {
-
+            cvv: '',
+            cardName : ''
         },
-        isButtonDisabled: true
+        confirm : {
+            
+        }
+
+
     }
 
     nextStep = () =>{
@@ -37,8 +47,10 @@ class PurchaseForm extends Component {
 
     render() {
         const {step} = this.state;
-        const {fullName, email, Address1, Address2, LGA, stateOfOrigin } = this.state
-        const values = {fullName, email, Address1, Address2, LGA, stateOfOrigin } 
+        const {fullName, email, Address1, Address2, LGA, stateOfOrigin, nameOnCard, cardType,  cardDetails, stepTwo } = this.state
+        const values = {fullName, email, Address1, Address2, LGA, stateOfOrigin,  nameOnCard, cardType,  cardDetails, stepTwo } 
+    
+
 
         switch (step) {
             case 1:
@@ -53,10 +65,24 @@ class PurchaseForm extends Component {
         
              case 2:
                 return (
-                    <Billing />                   
+                    <Billing
+                    nextStep ={this.nextStep}
+                    handleChange = {this.handleChange}
+                    values ={stepTwo}
+                    />                   
                     
                 );
-        
+
+                case 3:
+                return (
+                    <Confirm
+                    nextStep ={this.nextStep}
+                    handleChange = {this.handleChange}
+                    values ={stepTwo}
+                    />                   
+                    
+                );
+                    
             default:
                 return (
                     <React.Fragment> 

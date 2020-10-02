@@ -1,0 +1,119 @@
+.form-container{
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header{
+    width: 100%;
+
+}
+.header h1{
+    color: #575d7a;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 6rem;
+}
+.tabs{
+    margin-top: 2rem;
+    display: flex;
+    padding-bottom: 2rem;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid #000;
+
+}
+.tabs h2{
+    margin-right: 2rem;
+    font-size: 2.2rem;
+}
+.active{
+    color: #f49d4e;
+}
+
+.tab-item{
+    position: relative;
+}
+
+.active-tab{
+    position: absolute;
+    height: 1rem;
+    background: #f49d4e;
+    border-radius: 3rem;
+    top:4rem;
+    width: 100%;
+}
+.form-wrapper{
+    width: 100%;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+}
+.form-item{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.form-item label{
+    padding-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+label span{
+    color:red;
+}
+.form-item input, select{
+    margin-bottom: 2.5rem;
+    font-size: 1.6rem;
+    padding: 2rem 1rem;
+    outline: none;
+    border-radius: 1rem;
+}
+.iteml{
+    flex-direction: row;
+}
+
+.form-column{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: space-between;
+}
+.form-column:nth-child(2){
+    margin-left: 5rem;
+}
+.form-item-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form-item-button button{
+    padding: 2rem 5rem;
+    cursor: pointer;
+    border: none;
+    font-size: 1.7rem;
+    margin-bottom: 6rem;
+    margin-top: 2rem;
+}
+.continue-btn{
+    background: rgb(243,162,75);
+    background: linear-gradient(0deg, rgba(243,162,75,1) 0%, rgba(242,195,76,1) 100%);
+    color: white;
+    font-weight: 900;
+    border-radius: 0.5rem;
+    width: 25rem;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.continue-btn:hover{
+    background: linear-gradient(180deg, rgba(243,162,75,1) 0%, rgba(242,195,76,1) 100%);
+}
+.cancel-btn{
+    color: #626d99;
+    background: none;
+    font-weight: 700;
+    padding-top: 0;
+}

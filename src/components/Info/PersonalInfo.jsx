@@ -1,9 +1,15 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+
+import './info.css'
+
 
 class PersonalInfo extends Component {
   continue = e => {
       e.preventDefault();
       this.props.nextStep()
+    }
+    cancel = () =>{
+        this.props.cancel()
     }
 
     render(){
@@ -13,6 +19,18 @@ class PersonalInfo extends Component {
                 <React.Fragment> 
                     <div className="header">
                         <h1>Complete Your Purchase</h1>
+                        <div className="tabs">
+                            <div className="tab-item">
+                                <h2 className="active">Personal Info</h2>
+                                <div className="active-tab"></div>
+                            </div>
+                            <div className="tab-item">
+                                <h2>Billing</h2>
+                            </div>
+                            <div className="tab-item">
+                                <h2>Confirm Payment</h2>
+                            </div>
+                        </div>
                     </div>
                     <div className="form-wrapper">
                         <div className="form-item">
@@ -64,7 +82,7 @@ class PersonalInfo extends Component {
                                 defaultValue= {values.Address2}
                             />
                         </div>
-                        <div className="form-item">
+                        <div className="form-item iteml">
                             <div className="form-column">
                             <label htmlFor="lga">
                                 Local Government 
@@ -91,12 +109,17 @@ class PersonalInfo extends Component {
                             </div>
                             
                         </div>
-                        <div className="form-item">
+                        <div className="form-item-button">
                             <button 
                                 className='continue-btn'
                                 onClick={this.continue}
                             
-                            >Continue</button>
+                            >Next</button>
+                            <button 
+                                className='cancel-btn'
+                                onClick={this.cancel}
+                            
+                            >Cancel Payment</button>
                         </div>
                     </div>
                     

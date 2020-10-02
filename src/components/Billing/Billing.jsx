@@ -13,6 +13,21 @@ class Billing extends Component {
                 <React.Fragment> 
                     <div className="header">
                         <h1>Complete Your Purchase</h1>
+                        <div className="header">
+                        <h1>Complete Your Purchase</h1>
+                        <div className="tabs">
+                            <div className="tab-item">
+                                <h2 >Personal Info</h2>
+                            </div>
+                            <div className="tab-item">
+                                <h2 className="active">Billing</h2>
+                                <div className="active-tab"></div>
+                            </div>
+                            <div className="tab-item">
+                                <h2>Confirm Payment</h2>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                     <div className="form-wrapper">
                         <div className="form-item">
@@ -78,7 +93,6 @@ class Billing extends Component {
                             <button 
                                 className='continue-btn'
                                 onClick={this.continue}
-                            
                             >Continue</button>
                             <button>Cancel Payment</button>
                         </div>

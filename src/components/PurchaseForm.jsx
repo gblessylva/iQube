@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 
 import PersonalInfo from './Info/PersonalInfo';
 import Billing from './Billing/Billing';
-import Confirm from './Confirm/Confirm'
-import Success from "./Success/Success"
+import Confirm from './Confirm/Confirm';
+import Success from "./Success/Success";
+import Default from './Default/Default';
 
 class PurchaseForm extends Component {
     state = {
@@ -39,6 +40,14 @@ class PurchaseForm extends Component {
             step: step - 1
         })
     }
+
+    cancel = () =>{
+        const {step } = this.state;
+        this.setState({
+            step: 0
+        })
+    }
+
     handleChange = input => e=> {
         this.setState({
             [input] : e.target.value
@@ -59,6 +68,7 @@ class PurchaseForm extends Component {
                         nextStep ={this.nextStep}
                         handleChange = {this.handleChange}
                         values ={values}
+                        cancel = {this.cancel}
                     />
                     
                 );
@@ -79,18 +89,18 @@ class PurchaseForm extends Component {
                     nextStep ={this.nextStep}
                     handleChange = {this.handleChange}
                     values ={values}
+                    cancel = {this.cancel}
                     />                   
-                    
                 );
                 case 4:
                 return (
-                    <Success/>                   
-                    
+                    <Success/>  
                 );
-                   
-            
+                case 0 :
+                    return(
+                        <Default />
+                    )
         }
-        
     }
 }
 

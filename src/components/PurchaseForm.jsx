@@ -47,6 +47,12 @@ class PurchaseForm extends Component {
             step: 0
         })
     }
+    defaultStep = () =>{
+        const {step} = this.state;
+        this.setState({
+            step: 1
+        })
+    }
 
     handleChange = input => e=> {
         this.setState({
@@ -79,6 +85,7 @@ class PurchaseForm extends Component {
                     nextStep ={this.nextStep}
                     handleChange = {this.handleChange}
                     values ={values}
+                    cancel = {this.cancel}
                     />                   
                     
                 );
@@ -94,11 +101,15 @@ class PurchaseForm extends Component {
                 );
                 case 4:
                 return (
-                    <Success/>  
+                    <Success
+                        cancel = {this.cancel}
+                    />  
                 );
                 case 0 :
                     return(
-                        <Default />
+                        <Default
+                            defaultStep ={this.defaultStep}
+                        />
                     )
         }
     }

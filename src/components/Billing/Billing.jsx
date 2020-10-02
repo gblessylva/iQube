@@ -5,15 +5,15 @@ class Billing extends Component {
       e.preventDefault();
       this.props.nextStep()
     }
-
+    cancel = () =>{
+        this.props.cancel()
+    }
     render(){
         const { values, handleChange} = this.props;
         return( 
         <div className="form-container">
                 <React.Fragment> 
                     <div className="header">
-                        <h1>Complete Your Purchase</h1>
-                        <div className="header">
                         <h1>Complete Your Purchase</h1>
                         <div className="tabs">
                             <div className="tab-item">
@@ -27,7 +27,6 @@ class Billing extends Component {
                                 <h2>Confirm Payment</h2>
                             </div>
                         </div>
-                    </div>
                     </div>
                     <div className="form-wrapper">
                         <div className="form-item">
@@ -104,7 +103,10 @@ class Billing extends Component {
                                 className='continue-btn'
                                 onClick={this.continue}
                             >Continue</button>
-                            <button className="cancel-btn">Cancel Payment</button>
+                            <button 
+                                className='cancel-btn'
+                                onClick={this.cancel}
+                            >Cancel Payment</button>
                         </div>
                     </div>
                     

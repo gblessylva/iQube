@@ -5,6 +5,9 @@ class Confirm extends Component {
         e.preventDefault();
         this.props.nextStep()
       }  
+      cancel = () =>{
+        this.props.cancel()
+    }
     
     render(){
         const { handleChange } = this.props;
@@ -65,8 +68,13 @@ class Confirm extends Component {
                             <button 
                                 className='continue-btn'
                                 onClick={this.continue}
-                            
                             >Pay</button>
+
+                            <button 
+                                className='cancel-btn'
+                                onClick={this.cancel}
+                            
+                            >Cancel Payment</button>
                         </div>
                     
                 </React.Fragment>

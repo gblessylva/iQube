@@ -5,9 +5,11 @@
 
 html{
     font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
-    background: #faf0db;
-    height: 100vh;
+background-repeat: no-repeat;
+background-size: contain;
+background: linear-gradient(169deg, rgba(250,240,219,1) 0%, rgba(250,240,219,1) 73%, rgba(255,255,255,1) 73%);
 }
